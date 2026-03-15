@@ -4,13 +4,16 @@
     font-size: 15px;
 }
 
-@define-color primary #FF6FFF;
-@define-color secondary #00f2de;
-@define-color accent #B026FF;
+@define-color widget-color  #5e503f;
+@define-color fg-color  #c6ac8f;
+@define-color bg-color  #22333b;
+@define-color text-color  #0a0908;
+@define-color border-color #B026FF;
+@define-color active-widget  #432818;
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.7);
-    border-bottom: 3px solid @secondary;
+    background-color: @bg-color; 
+    border-bottom: 3px solid @fg-color;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -30,11 +33,11 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+    background-color: @bg-color;
 }
 
 window#waybar.chromium {
-    background-color: #000000;
+    background-color: @text-color;
     border: none;
 }
 
@@ -54,34 +57,34 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background-color: #a37800;
+    background-color: @active-widget;
 }
 
 #workspaces button {
     margin: 5px 5px 5px 5px;
     background-color: transparent;
-    color: @secondary;
+    color: @fg-color;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: @active-widget;
 }
 
 #workspaces button.focused {
-  border-top: 4px solid #eb4d4b;
+  border-top: 4px solid @active-widget;
 }
 
 #workspaces button.active {
-	background-color: @primary;
-	color: #000991;
+	background-color: @widget-color;
+	color: @text-color;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: @urgent-widget;
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: @bg-widget;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -122,27 +125,27 @@ button:hover {
 }
 
 #clock {
-    color: @secondary;
+    color: @fg-color;
     border: none;
     font-size: 25px;
 }
 
 #battery {
-    background-color: @primary;
-    color: #000000;
+    background-color: @widget-color;
+    color: @text-color;
     border-radius: 30px;
     margin-bottom: 3.5px;
 }
 
 #battery.charging, #battery.plugged {
     color: #ffffff;
-    background-color: #26A65B;
+    background-color: @bg-color;
 }
 
 @keyframes blink {
     to {
         background-color: #ffffff;
-        color: #000000;
+        color: @text-color;
     }
 }
 
@@ -169,50 +172,50 @@ button:hover {
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
+    background-color: @active-widget;
+    color: @widget-color;
 }
 
 #power-profiles-daemon.power-saver {
     background-color: #2ecc71;
-    color: #000000;
+    color: @text-color;
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: @text-color;
 }
 
 #cpu {
-    background-color: @primary;
-    color: #12086F;
+    background-color: @widget-color;
+    color: @text-color;
     border-radius: 30px;
     margin-bottom: 3.5px;
 }
 
 #memory {
-    background-color: @primary;
-    color: #12086F;
+    background-color: @widget-color;
+    color: @text-color;
     border-radius: 30px;
     margin-bottom: 3.5px;
 }
 
 #disk {
-    background-color: @primary;
-    color: #12086F;
+    background-color: @widget-color;
+    color: @text-color;
     border-radius: 30px;
     margin-bottom: 3.5px;
 }
 
 #backlight {
-    background-color: @primary;
-    color: #12086F;
+    background-color: @widget-color;
+    color: @text-color;
     border-radius: 30px;
     margin-bottom: 3.5px;
 }
 
 #network {
-    background-color: @primary;
-    color: #12086F;
+    background-color: @widget-color;
+    color: @text-color;
     border-radius: 30px;
     margin-bottom: 3.5px;
 }
@@ -222,10 +225,11 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: @primary;
-    color: #12086F;
+    background-color: @widget-color;
+    color: @text-color;
     border-radius: 30px;
     margin-bottom: 3.5px;
+    min-width: 100px;
 }
 
 #pulseaudio.muted {
@@ -234,24 +238,24 @@ label:focus {
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
+    background-color: @widget-color;
+    color: @text-color;
     min-width: 100px;
     border-radius: 30px;
     margin-bottom: 3.5px;
 }
 
 #custom-media.custom-spotify {
-    background-color: #66cc99;
+    background-color: @widget-color;
 }
 
 #custom-media.custom-vlc {
-    background-color: #ffa000;
+    background-color: @widget-color;
 }
 
 #temperature {
-    background-color: @primary;
-    color: #12086F;
+    background-color: @widget-color;
+    color: @text-color;
     border-radius: 30px;
     margin-bottom: 3.5px;
 }
@@ -261,7 +265,7 @@ label:focus {
 }
 
 #mpd {
-    background-color: @primary;
+    background-color: @widget-color;
     color: #2a5c45;
     border-radius: 30px;
     margin-bottom: 3.5px;
@@ -289,7 +293,7 @@ label:focus {
 
 #keyboard-state {
     background: #97e1ad;
-    color: #000000;
+    color: @text-color;
     padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;
