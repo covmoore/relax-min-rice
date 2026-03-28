@@ -15,3 +15,8 @@ session
 filetypesrc
 nvim/
 spotify/
+Docker Desktop/
+Electron/
+cagent/
+user-dirs.dirs
+user-dirs.locale

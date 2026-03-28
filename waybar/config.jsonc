@@ -30,6 +30,7 @@
         "battery",
         "battery#bat2",
         "tray",
+        "image#docker",
         "custom/power"
     ],
     // Modules configuration
@@ -97,6 +98,7 @@
     "tray": {
         // "icon-size": 21,
         "spacing": 10,
+        "ignored-items": ["chrome_status_icon_1", "Docker Desktop"]
         // "icons": {
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
@@ -196,6 +198,13 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "image#docker": {
+        "path": "/home/covmoore/.config/waybar/docker.png",
+        "size": 24,
+        "tooltip": true,
+        "tooltip-format": "Docker Desktop",
+        "on-click": "bash /home/covmoore/.config/waybar/docker-launch.sh"
     },
     "custom/power": {
         "format" : "⏻ ",

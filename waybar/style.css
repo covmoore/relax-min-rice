@@ -1,15 +1,4 @@
-* {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 15px;
-}
-
-@define-color widget-color  #5e503f;
-@define-color fg-color  #c6ac8f;
-@define-color bg-color  #22333b;
-@define-color text-color  #0a0908;
-@define-color border-color #B026FF;
-@define-color active-widget  #432818;
+@define-color active-widget #432818;
 
 window#waybar {
     background-color: @bg-color; 
@@ -46,7 +35,7 @@ button {
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
-    border-radius: 3;
+    border-radius: 3px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -313,6 +302,17 @@ label:focus {
 
 #scratchpad.empty {
 	background-color: transparent;
+}
+
+#docker {
+    background-color: #1d63ed;
+    border-radius: 30px;
+    margin-bottom: 3.5px;
+    padding: 2px 8px;
+}
+
+#docker:hover {
+    background-color: #1451c7;
 }
 
 #privacy {
