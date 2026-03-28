@@ -1,4 +1,15 @@
-@define-color active-widget #432818;
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+@define-color widget-color  #5e503f;
+@define-color fg-color  #c6ac8f;
+@define-color bg-color  #22333b;
+@define-color text-color  #0a0908;
+@define-color border-color #B026FF;
+@define-color active-widget  #432818;
 
 window#waybar {
     background-color: @bg-color; 
