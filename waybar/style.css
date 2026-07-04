@@ -160,6 +160,39 @@ button:hover {
     animation-direction: alternate;
 }
 
+/* Combined battery + power-profile widget. Colour reflects the active profile. */
+#custom-powerbattery {
+    background-color: @widget-color;
+    color: @text-color;
+    border-radius: 30px;
+    margin-bottom: 3.5px;
+    padding: 0 12px;
+}
+
+#custom-powerbattery.performance {
+    background-color: #B026FF;
+    color: #ffffff;
+}
+
+#custom-powerbattery.balanced {
+    background-color: @active-widget;
+    color: @fg-color;
+}
+
+#custom-powerbattery.power-saver {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+/* Low battery while discharging: reuse the blink animation defined above. */
+#custom-powerbattery.critical {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 #power-profiles-daemon {
     padding-right: 15px;
     border-radius: 30px;
